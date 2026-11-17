@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: any-video-downloader-pro
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: MAX_FILESIZE_MB
+        value: "500"
